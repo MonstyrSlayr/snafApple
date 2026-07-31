@@ -1,3 +1,8 @@
+import re
+import os
+from urllib.parse import urlparse
+import requests
+
 from readAllPosts import posts
 
 # filter posts: only sfw posts with at least 1k score and an image
@@ -15,11 +20,6 @@ for post in posts:
     filtered_posts.append(post)
 
 print(f"{len(filtered_posts)} filtered posts")
-
-import os
-from urllib.parse import urlparse
-import requests
-
 
 def download_image(name: str, image_url: str, directory: str) -> str:
     """
@@ -74,5 +74,16 @@ def download_image(name: str, image_url: str, directory: str) -> str:
 
     return filepath
 
+i = 0
 for post in filtered_posts:
-    download_image(post.name, post.url, "./snafus")
+    print(f"downloading {i}: {post.title}")
+    name = post.title.replace(" ", "_")
+    clean_name = re.sub(r"[^a-zA-Z0-9_]", "", name)
+
+    try:
+        download_image(f"{post.id}", post.url, "./snafus")
+        i += 1
+    except requests.exceptions.HTTPError:
+        print("image probably doesn't exist")
+
+print("jaundice")
