@@ -4,7 +4,7 @@
 
 [Snaf Apple](https://youtu.be/A3jC-4428_U)
 
-a snafu is a poorly drawn meme or situation. i combined a ton of them into a bad apple music video
+a snafu is a poorly drawn meme or situation. they are uploaded to the subreddit r/coaxedintoasnafu. i combined a ton of them into a bad apple music video
 
 note: snafus were filtered to posts above 1k upvotes, sfw, with its image hosted on reddit. i don't have infinite storage space lol. the number of snafus was taken from to 87,500 to 7,242. these settings can be changed in **filterAllPosts.py**
 
