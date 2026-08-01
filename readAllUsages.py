@@ -79,7 +79,7 @@ for i in range(LEADERBOARD_SIZE):
     print(str(i + 1) + ":", author_sort_by_total[len(author_sort_by_total) - 1 - i] + ":", author_total_used[author_sort_by_total[len(author_sort_by_total) - 1 - i]])
 print()
 
-AUTHOR_ANALYSIS = ["MonstyrSlayr", "DaToast815", "CobaltChromeA"]
+AUTHOR_ANALYSIS = ["MonstyrSlayr", "DaToast815", "CobaltChromeA", "DampButter"]
 for author in AUTHOR_ANALYSIS:
     print(author, "usages:", author_posts_used.get(author, 0))
     print(author, "appearances:", author_total_used.get(author, 0))
@@ -88,7 +88,7 @@ for author in AUTHOR_ANALYSIS:
     sorted_author_posts = sorted(author_posts, key=lambda post: -post.total_usages)
 
     print(author, "posts:")
-    for post in author_posts:
+    for post in sorted_author_posts:
         print(post.id + ":", post.total_usages)
 
     print()
