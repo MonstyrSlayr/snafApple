@@ -31,21 +31,21 @@ if you get an error just download the library i really don't wanna make a requir
 ## Statistics
 total posts used: 921
 
-most used posts (id):
-1. https://www.reddit.com/r/coaxedintoasnafu/comments/1rm1zn3: 16107
-1. https://www.reddit.com/r/coaxedintoasnafu/comments/1psv4nm: 13139
-1. https://www.reddit.com/r/coaxedintoasnafu/comments/7rirl8: 12644
-1. https://www.reddit.com/r/coaxedintoasnafu/comments/1q5el0x: 11606
-1. https://www.reddit.com/r/coaxedintoasnafu/comments/14jst3d: 9998
+most used posts for every frame:
+1. [coaxed into horror AUs of popular kid-friendly media](https://www.reddit.com/r/coaxedintoasnafu/comments/1rm1zn3): 16107
+1. [Coaxed into the ever omnipresent webcomic](https://www.reddit.com/r/coaxedintoasnafu/comments/1psv4nm): 13139
+1. [showing how S.M.A.R.T I am with images and text](https://www.reddit.com/r/coaxedintoasnafu/comments/7rirl8): 12644
+1. [statement](https://www.reddit.com/r/coaxedintoasnafu/comments/1q5el0x): 11606
+1. [Projecting much?](https://www.reddit.com/r/coaxedintoasnafu/comments/14jst3d): 9998
 
-most used authors:
+most used authors (posts used):
 1. u/National_Yak5302: 106
 1. u/Treasure-boy: 55
 1. u/SmallTatorTot: 52
 1. u/Objective_Trick_6406: 44
 1. u/PaxGladeus: 39
 
-most appeared authors:
+most appeared authors for every frame:
 1. u/CalabiYauFan: 16107
 1. u/WimboTurtle: 13139
 1. u/HeavyMetalZen: 12644
