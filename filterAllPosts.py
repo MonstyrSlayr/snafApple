@@ -5,7 +5,7 @@ import requests
 
 from readAllPosts import posts
 
-# filter posts: only sfw posts with at least 1k score and an image
+# filter posts: only sfw posts with at least 1k score and an image, existing accounts only and the image is hosted on reddit.com
 filtered_posts = []
 for post in posts:
     if post.score < 1000:
@@ -15,6 +15,12 @@ for post in posts:
         continue
 
     if post.over_18:
+        continue
+
+    if post.author == "[deleted]":
+        continue
+
+    if post.domain != "i.redd.it" and post.domain != "reddit.com":
         continue
 
     filtered_posts.append(post)
@@ -74,16 +80,17 @@ def download_image(name: str, image_url: str, directory: str) -> str:
 
     return filepath
 
-i = 0
-for post in filtered_posts:
-    print(f"downloading {i}: {post.title}")
-    name = post.title.replace(" ", "_")
-    clean_name = re.sub(r"[^a-zA-Z0-9_]", "", name)
+if __name__ == "__main__":
+    i = 0
+    for post in filtered_posts:
+        print(f"downloading {i}: {post.title}")
+        name = post.title.replace(" ", "_")
+        clean_name = re.sub(r"[^a-zA-Z0-9_]", "", name)
 
-    try:
-        download_image(f"{post.id}", post.url, "./snafus")
-        i += 1
-    except requests.exceptions.HTTPError:
-        print("image probably doesn't exist")
+        try:
+            download_image(f"{post.id}", post.url, "./snafus")
+            i += 1
+        except requests.exceptions.HTTPError:
+            print("image probably doesn't exist")
 
-print("jaundice")
+    print("jaundice")

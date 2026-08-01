@@ -3,9 +3,9 @@
 import cv2 as cv
 import os
 
-w = 480
-h = 360
-fps = 30.0
+w = 642
+h = 480
+fps = 29.97
 
 symbolFramesDirectory = os.fsencode("snafuFrames")
 symbolFramesCount = sum(1 for _, _, files in os.walk("snafuFrames") for f in files)
@@ -13,10 +13,10 @@ frames = [None] * symbolFramesCount
 
 for file in os.listdir(symbolFramesDirectory):
     filenameReal = os.fsdecode(file)
-    filename = "snafuFrames/" + filenameReal
+    filename = "./snafuFrames/" + filenameReal
     
     frame = cv.imread(filename, cv.IMREAD_UNCHANGED)
-    daIndex = int(filenameReal.replace(".png", "").replace("frame", ""))
+    daIndex = int(filenameReal.replace(".jpg", "").replace("frame", ""))
     frames[daIndex] = frame
 
 print(len(frames))

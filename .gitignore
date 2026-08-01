@@ -1,5 +1,12 @@
 /__pycache__
 reddit_posts.csv
+redditPosts.csv
 /snafus
 badApple360.mp4
+badApple480.mp4
 videoOutput.mp4
+/frames
+/cache
+/.vscode
+/snafuFrames
+usageStats.csv

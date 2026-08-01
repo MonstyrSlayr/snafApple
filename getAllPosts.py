@@ -3,10 +3,11 @@ import time
 import requests
 
 SUBREDDIT = "coaxedintoasnafu"
-OUTPUT_FILE = "./reddit_posts.csv"
+OUTPUT_FILE = "./redditPosts.csv"
 
 BASE_URL = "https://arctic-shift.photon-reddit.com/api/posts/search"
 
+# in case i wanna do other queries with it i guess
 FIELDS = [
     "id",
     "created_utc",
@@ -29,7 +30,6 @@ FIELDS = [
     "stickied",
 ]
 
-
 def content_type(post):
     if post.get("is_self"):
         return "text"
@@ -44,7 +44,6 @@ def content_type(post):
 
     return "unknown"
 
-
 after = None
 total = 0
 
@@ -53,7 +52,6 @@ with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as f:
     writer.writeheader()
 
     while True:
-
         params = {
             "subreddit": SUBREDDIT,
             "limit": 100,
@@ -97,10 +95,10 @@ with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as f:
             })
 
         total += len(posts)
-        print(f"Downloaded {total:,} posts")
+        print(f"downloaded {total:,} posts")
 
         after = posts[-1]["created_utc"]
 
         time.sleep(0.5)
 
-print("Finished!")
+print("garbgar")

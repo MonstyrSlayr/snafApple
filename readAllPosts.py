@@ -59,9 +59,9 @@ def load_posts(csv_file: str) -> list[RedditPost]:
 
     return posts
 
-posts = load_posts("reddit_posts.csv")
+posts = load_posts("./redditPosts.csv")
 posts.reverse()
 
 if (__name__ == "__main__"):
-    print(f"Loaded {len(posts)} posts.")
+    print(f"loaded {len(posts)} posts")
     print(posts[0])
