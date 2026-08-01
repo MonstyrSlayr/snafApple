@@ -38,45 +38,49 @@ total_posts_used = 0
 authors = set()
 author_posts_used = {}
 author_total_used = {}
+
 for post in filtered_posts:
     if post.total_usages > 0:
         total_posts_used += 1
-    
-    authors.add(post.author)
-    author_posts_used[post.author] = author_posts_used.get(post.author, 0) + 1
-    author_total_used[post.author] = author_total_used.get(post.author, 0) + post.total_usages
+
+        authors.add(post.author)
+        author_posts_used[post.author] = author_posts_used.get(post.author, 0) + 1
+        author_total_used[post.author] = author_total_used.get(post.author, 0) + post.total_usages
+
+for author in authors:
+    author_posts_used[post.author] = author_posts_used.get(post.author, 0)
 
 print("total posts used:", total_posts_used)
 print()
+
+LEADERBOARD_SIZE = 10
 
 # get post with most usages
 sorted_by_appearance = sorted(filtered_posts, key=lambda post: post.total_usages)
 
 print("most used posts:")
-print(sorted_by_appearance[len(sorted_by_appearance) - 1].id + ":", sorted_by_appearance[len(sorted_by_appearance) - 1].total_usages)
-print(sorted_by_appearance[len(sorted_by_appearance) - 2].id + ":", sorted_by_appearance[len(sorted_by_appearance) - 2].total_usages)
-print(sorted_by_appearance[len(sorted_by_appearance) - 3].id + ":", sorted_by_appearance[len(sorted_by_appearance) - 3].total_usages)
-print(sorted_by_appearance[len(sorted_by_appearance) - 4].id + ":", sorted_by_appearance[len(sorted_by_appearance) - 4].total_usages)
-print(sorted_by_appearance[len(sorted_by_appearance) - 5].id + ":", sorted_by_appearance[len(sorted_by_appearance) - 5].total_usages)
+
+for i in range(LEADERBOARD_SIZE):
+    print(str(i + 1) + ":", sorted_by_appearance[len(sorted_by_appearance) - 1 - i].id + ":", sorted_by_appearance[len(sorted_by_appearance) - 1 - i].total_usages)
 print()
 
 # most author
 author_sort_by_posts = sorted(list(authors), key=lambda author: author_posts_used[author])
 
 print("most used authors:")
-print(author_sort_by_posts[len(author_sort_by_posts) - 1] + ":", author_posts_used[author_sort_by_posts[len(author_sort_by_posts) - 1]])
-print(author_sort_by_posts[len(author_sort_by_posts) - 2] + ":", author_posts_used[author_sort_by_posts[len(author_sort_by_posts) - 2]])
-print(author_sort_by_posts[len(author_sort_by_posts) - 3] + ":", author_posts_used[author_sort_by_posts[len(author_sort_by_posts) - 3]])
-print(author_sort_by_posts[len(author_sort_by_posts) - 4] + ":", author_posts_used[author_sort_by_posts[len(author_sort_by_posts) - 4]])
-print(author_sort_by_posts[len(author_sort_by_posts) - 5] + ":", author_posts_used[author_sort_by_posts[len(author_sort_by_posts) - 5]])
+for i in range(LEADERBOARD_SIZE):
+    print(str(i + 1) + ":", author_sort_by_posts[len(author_sort_by_posts) - 1 - i] + ":", author_posts_used[author_sort_by_posts[len(author_sort_by_posts) - 1 - i]])
 print()
 
 author_sort_by_total = sorted(list(authors), key=lambda author: author_total_used[author])
 
 print("most appeared authors:")
-print(author_sort_by_total[len(author_sort_by_total) - 1] + ":", author_total_used[author_sort_by_total[len(author_sort_by_total) - 1]])
-print(author_sort_by_total[len(author_sort_by_total) - 2] + ":", author_total_used[author_sort_by_total[len(author_sort_by_total) - 2]])
-print(author_sort_by_total[len(author_sort_by_total) - 3] + ":", author_total_used[author_sort_by_total[len(author_sort_by_total) - 3]])
-print(author_sort_by_total[len(author_sort_by_total) - 4] + ":", author_total_used[author_sort_by_total[len(author_sort_by_total) - 4]])
-print(author_sort_by_total[len(author_sort_by_total) - 5] + ":", author_total_used[author_sort_by_total[len(author_sort_by_total) - 5]])
+for i in range(LEADERBOARD_SIZE):
+    print(str(i + 1) + ":", author_sort_by_total[len(author_sort_by_total) - 1 - i] + ":", author_total_used[author_sort_by_total[len(author_sort_by_total) - 1 - i]])
 print()
+
+AUTHOR_ANALYSIS = ["MonstyrSlayr", "DaToast815"]
+for author in AUTHOR_ANALYSIS:
+    print(author, "usages:", author_posts_used.get(author, 0))
+    print(author, "appearances:", author_total_used.get(author, 0))
+    print()

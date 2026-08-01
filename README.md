@@ -26,7 +26,7 @@ if you get an error just download the library i really don't wanna make a requir
 
 - **snafuFramesToVideo.py**: Takes the frames and turns it back into a video
 
-- **readAllUsages.py**: Gets statistics from usageStats.csv and parses it
+- **readAllUsages.py**: Gets statistics from usageStats.csv and parses it (cool)
 
 ## Statistics
 total posts used: 921
@@ -39,11 +39,11 @@ most used posts for every frame:
 1. [Projecting much?](https://www.reddit.com/r/coaxedintoasnafu/comments/14jst3d): 9998
 
 most used authors (posts used):
-1. u/National_Yak5302: 106
-1. u/Treasure-boy: 55
-1. u/SmallTatorTot: 52
-1. u/Objective_Trick_6406: 44
-1. u/PaxGladeus: 39
+1. u/Objective_Trick_6406: 14
+1. u/FUNNYFUNFUNNIER: 11
+1. u/National_Yak5302: 10
+1. u/SmartEpicness: 7
+1. u/A_TDS_Enjoyer: 7
 
 most appeared authors for every frame:
 1. u/CalabiYauFan: 16107
