@@ -1,6 +1,8 @@
-couldn't be bothered
-
 # Snaf Apple
+
+[![Snaf Apple](https://monstyrslayr.github.io/img/snafApple.png)](https://youtu.be/A3jC-4428_U)
+
+[Snaf Apple](https://youtu.be/A3jC-4428_U)
 
 a snafu is a poorly drawn meme or situation. i combined a ton of them into a bad apple music video
 
